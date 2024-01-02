@@ -1,15 +1,9 @@
-function parseJSON(jsonString) {
-    try {
-        const parsedObject = JSON.parse(jsonString);
-        return parsedObject;
-    } catch (error) {
-        return { error: `Invalid JSON: ${error.message}` };
-    }
-}
+var codes = [
+  { "code": "6", "country": "Польща" },
+  { "code": "38", "country": "Україна" },
+  { "code": "1", "country": "США" }
+];
 
-const jsonString1 = '{"name": "John", "age": 30, "city": "New York"}';
-const jsonString2 = '{"name": "Alice", "age": "twenty-five", "city": "London"}';
-
-console.log(parseJSON(jsonString1));
-
-console.log(parseJSON(jsonString2));
+codes.forEach(function(item) {
+  console.log(`Код ${item.code}: ${item.country}`);
+});
