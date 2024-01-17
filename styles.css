@@ -1,0 +1,22 @@
+
+#testimonials {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.testimonial {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  max-width: 300px;
+}
+
+.testimonial h3 {
+  margin-bottom: 10px;
+}
+
+.testimonial p {
+  margin-bottom: 0;
+}
