@@ -1,19 +1,10 @@
-var table = document.createElement("table");
+document.addEventListener("DOMContentLoaded", function() {
+    var imageNames = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg"];
 
-for (var i = 0; i < 10; i++) {
-    var row = document.createElement("tr");
+    var randomIndex = Math.floor(Math.random() * imageNames.length);
 
-    for (var j = 0; j < 10; j++) {
-        var cellValue = i * 10 + j + 1;
+    var randomImagePath = "images/" + imageNames[randomIndex];
 
-        var cell = document.createElement("td");
-
-        cell.textContent = cellValue;
-
-        row.appendChild(cell);
-    }
-
-    table.appendChild(row);
-}
-
-document.body.appendChild(table);
+    var imgElement = document.getElementById("randomImage");
+    imgElement.src = randomImagePath;
+});
