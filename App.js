@@ -1,31 +1,19 @@
+var table = document.createElement("table");
 
-const testimonialsData = [
-  { name: "Іван", text: "Дуже задоволений вашими послугами. Рекомендую!" },
-  { name: "Ольга", text: "Прекрасний досвід співпраці. Швидко та якісно." },
-  { name: "Петро", text: "Ваша команда зробила чудову роботу. Дякую!" },
-];
+for (var i = 0; i < 10; i++) {
+    var row = document.createElement("tr");
 
-function displayTestimonials(testimonials) {
-  const testimonialsContainer = document.getElementById("testimonials");
+    for (var j = 0; j < 10; j++) {
+        var cellValue = i * 10 + j + 1;
 
-  testimonials.forEach((testimonial) => {
-    const testimonialElement = document.createElement("div");
-    testimonialElement.classList.add("testimonial");
+        var cell = document.createElement("td");
 
-    const nameElement = document.createElement("h3");
-    nameElement.textContent = testimonial.name;
+        cell.textContent = cellValue;
 
-    const textElement = document.createElement("p");
-    textElement.textContent = testimonial.text;
+        row.appendChild(cell);
+    }
 
-    testimonialElement.appendChild(nameElement);
-    testimonialElement.appendChild(textElement);
-
-    testimonialsContainer.appendChild(testimonialElement);
-  });
+    table.appendChild(row);
 }
 
-
-window.onload = function () {
-  displayTestimonials(testimonialsData);
-};
+document.body.appendChild(table);
