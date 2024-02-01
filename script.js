@@ -40,16 +40,16 @@ function getWeather() {
 
             document.getElementById('weather-info').innerHTML =
                 '<div class="card">' +
-                '<div class="card-body">' +
-                '<h5 class="card-title">Погода в місті ' + selectedCity + '</h5>' +
-                '<p class="card-text">Температура: ' + temperature + '°C</p>' +
-                '<p class="card-text">Тиск: ' + pressure + ' hPa</p>' +
-                '<p class="card-text">Опис: ' + description + '</p>' +
-                '<p class="card-text">Вологість: ' + humidity + '%</p>' +
-                '<p class="card-text">Швидкість вітру: ' + windSpeed + ' м/с</p>' +
-                '<p class="card-text">Напрям вітру: ' + windDirection + ' градусів</p>' +
-                '<img src="http://openweathermap.org/img/w/' + iconCode + '.png" class="img-fluid" alt="Погодний значок">' +
-                '</div>' +
+                    '<div class="card-body">' +
+                        '<h5 class="card-title">Погода в місті ' + selectedCity + '</h5>' +
+                        '<p class="card-text">Температура: ' + temperature + '°C</p>' +
+                        '<p class="card-text">Тиск: ' + pressure + ' hPa</p>' +
+                        '<p class="card-text">Опис: ' + description + '</p>' +
+                        '<p class="card-text">Вологість: ' + humidity + '%</p>' +
+                        '<p class="card-text">Швидкість вітру: ' + windSpeed + ' м/с</p>' +
+                        '<p class="card-text">Напрям вітру: ' + windDirection + ' градусів</p>' +
+                        '<img src="http://openweathermap.org/img/w/' + iconCode + '.png" class="img-fluid" alt="Погодний значок">' +
+                    '</div>' +
                 '</div>';
         }
     };
