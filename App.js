@@ -1,19 +1,15 @@
-var table = document.createElement("table");
+let slideIndex = 0;
+showSlides();
 
-for (var i = 0; i < 10; i++) {
-    var row = document.createElement("tr");
-
-    for (var j = 0; j < 10; j++) {
-        var cellValue = i * 10 + j + 1;
-
-        var cell = document.createElement("td");
-
-        cell.textContent = cellValue;
-
-        row.appendChild(cell);
-    }
-
-    table.appendChild(row);
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000);
 }
 
-document.body.appendChild(table);
