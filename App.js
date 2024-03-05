@@ -1,15 +1,11 @@
-let slideIndex = 0;
-showSlides();
+document.getElementById('redirectButton').addEventListener('click', function() {
+  let url = document.getElementById('urlInput').value.trim();
 
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("slide");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  // Перевірка і додавання протоколу, якщо потрібно
+  if (!url.match(/^https?:\/\//i)) {
+    url = 'https://' + url;
   }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 2000);
-}
 
+  // Переадресація
+  window.location.href = url;
+});

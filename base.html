@@ -3,22 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Image Slider</title>
-<link rel="stylesheet" href="style.css">
+<title>Переадресація з перевіркою протоколу</title>
 </head>
 <body>
 
-<div class="slider">
-  <div class="slides">
-    <!-- Повторять для каждого изображения -->
-    <div class="slide"><img src="123.jpg" alt="Slide 1"></div>
-    <div class="slide"><img src="312.jpg" alt="Slide 2"></div>
-    <div class="slide"><img src="231.jpg" alt="Slide 3"></div>
-    <!-- ... -->
-  </div>
-  <button class="prev">&#10094;</button>
-  <button class="next">&#10095;</button>
-</div>
+<label for="urlInput">Введіть URL для переадресації:</label>
+<input type="text" id="urlInput" placeholder="https://example.com">
+
+<button id="redirectButton">Перейти до сайту</button>
 
 <script src="App.js"></script>
 </body>
