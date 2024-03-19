@@ -15,24 +15,21 @@
 <button onclick="showResults()">Show Results</button>
 
 <script>
-// Змінні для зберігання лічильників
 let counts = [0, 0, 0];
 
-// Функція для збільшення лічильника при кліку на смайлик
 function incrementCount(index) {
   counts[index]++;
   updateCountDisplay(index);
 }
 
-// Функція для оновлення відображення лічильника
 function updateCountDisplay(index) {
   document.getElementById(`count${index + 1}`).textContent = counts[index];
 }
 
-// Функція для показу результатів
+
 function showResults() {
-  const maxCount = Math.max(...counts); // Знаходимо максимальне значення в масиві лічильників
-  const winningIndex = counts.indexOf(maxCount); // Знаходимо індекс переможця
+  const maxCount = Math.max(...counts);
+  const winningIndex = counts.indexOf(maxCount);
   const winningEmoji = document.getElementById(`emoji${winningIndex + 1}`).textContent;
   alert(`The winner is: ${winningEmoji}`);
 }
