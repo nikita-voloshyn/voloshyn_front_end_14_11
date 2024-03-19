@@ -3,23 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Image Slider</title>
-<link rel="stylesheet" href="style.css">
+<title>Emoji Voting</title>
 </head>
 <body>
+<h1>Emoji Voting</h1>
+<ul id="emoji-list">
+  <li><span id="emoji1" onclick="incrementCount(0)">😊</span> <span id="count1">0</span></li>
+  <li><span id="emoji2" onclick="incrementCount(1)">😍</span> <span id="count2">0</span></li>
+  <li><span id="emoji3" onclick="incrementCount(2)">😂</span> <span id="count3">0</span></li>
+</ul>
+<button onclick="showResults()">Show Results</button>
 
-<div class="slider">
-  <div class="slides">
-    <!-- Повторять для каждого изображения -->
-    <div class="slide"><img src="123.jpg" alt="Slide 1"></div>
-    <div class="slide"><img src="312.jpg" alt="Slide 2"></div>
-    <div class="slide"><img src="231.jpg" alt="Slide 3"></div>
-    <!-- ... -->
-  </div>
-  <button class="prev">&#10094;</button>
-  <button class="next">&#10095;</button>
-</div>
+<script>
+// Змінні для зберігання лічильників
+let counts = [0, 0, 0];
 
-<script src="App.js"></script>
+// Функція для збільшення лічильника при кліку на смайлик
+function incrementCount(index) {
+  counts[index]++;
+  updateCountDisplay(index);
+}
+
+// Функція для оновлення відображення лічильника
+function updateCountDisplay(index) {
+  document.getElementById(`count${index + 1}`).textContent = counts[index];
+}
+
+// Функція для показу результатів
+function showResults() {
+  const maxCount = Math.max(...counts); // Знаходимо максимальне значення в масиві лічильників
+  const winningIndex = counts.indexOf(maxCount); // Знаходимо індекс переможця
+  const winningEmoji = document.getElementById(`emoji${winningIndex + 1}`).textContent;
+  alert(`The winner is: ${winningEmoji}`);
+}
+</script>
 </body>
 </html>
